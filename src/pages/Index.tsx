@@ -4,6 +4,7 @@ import PageHeader from '../components/Dashboard/PageHeader';
 import StatsCardGrid from '../components/Dashboard/StatsCardGrid';
 import LeadsTrackingChart from '../components/Dashboard/LeadsTrackingChart';
 import ReasonsAndOtherStats from '../components/Dashboard/ReasonsAndOtherStats';
+import { ThemeProvider } from '@/components/theme-provider';
 
 /**
  * The main dashboard page component.
@@ -11,14 +12,16 @@ import ReasonsAndOtherStats from '../components/Dashboard/ReasonsAndOtherStats';
  */
 const IndexPage: React.FC = () => {
   return (
-    <MainAppLayout>
-      <div className="flex flex-col gap-6">
-        <PageHeader />
-        <StatsCardGrid />
-        <LeadsTrackingChart />
-        <ReasonsAndOtherStats />
-      </div>
-    </MainAppLayout>
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <MainAppLayout>
+        <div className="flex flex-col gap-6">
+          <PageHeader />
+          <StatsCardGrid />
+          <LeadsTrackingChart />
+          <ReasonsAndOtherStats />
+        </div>
+      </MainAppLayout>
+    </ThemeProvider>
   );
 };
 
