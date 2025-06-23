@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Sidebar from './Sidebar';
+import { ThemeToggle } from '@/components/theme-toggle';
 import {
   Menu,
   Search,
@@ -33,6 +34,7 @@ const Header: React.FC = () => {
       </div>
 
       <div className="flex items-center gap-4">
+        <ThemeToggle />
         <Button variant="ghost" size="icon" className="rounded-full">
           <Bell className="h-5 w-5" />
           <span className="sr-only">Notifications</span>
